@@ -26,3 +26,26 @@ def SumOfDigits (a):
 
 x = float(input('Input real number: '))
 print(f'Sum of digits in number {x} is {SumOfDigits(x)}')
+
+
+
+
+# Вариант 2:
+
+def float_to_completed_integer(real_number: float) -> int:
+    magnitude = int(1)
+    temp = float(real_number)
+    while not temp.is_integer():
+        magnitude *= 10
+        temp = real_number * magnitude
+    return int(temp)
+
+
+def get_digits_sum(any_number):
+    no_point_number = float_to_completed_integer(any_number)
+    no_point_number = abs(no_point_number)
+    sum = 0
+    while no_point_number > 0:
+        sum += no_point_number % 10
+        no_point_number //= 10
+    return sum
