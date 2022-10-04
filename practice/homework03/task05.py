@@ -7,16 +7,30 @@
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] [Негафибоначчи]
 
 def fibonacci(n):
-  list_fib = []
-
-  for f in range(n):
-    if f in [1, 2]:
-        list_fib.append('1')
-    else:
-        fib = fibonacci (n + 2) − fibonacci (n + 1)
-        list_fib.append(fib)
-
+    list_fib =  []
+    for i in range(n): 
+        if i in [0, 1]:
+            list_fib.append(1)
+        else:
+            list_fib.append(list_fib[i - 2] + list_fib[i - 1])
     return list_fib
- 
+
+def negafib(list):
+    new_list = []
+    z = len(list) - 1
+    for i in range(len(list)):
+        if i % 2 == 0:
+            new_list.append(list[z - i]) 
+        else:
+            new_list.append(list[z - i] * (-1))
+        
+    return new_list
+
+
+
 n = int(input('Input number: '))
-print(fibonacci(n))
+fib = fibonacci(n)
+neg = negafib(fib)
+res = neg + fib
+print(res)
+
