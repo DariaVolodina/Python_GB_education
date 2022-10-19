@@ -6,20 +6,35 @@
 # 1113384455229 -> [8,9]
 # 1115566773322 -> []
 
+from random import randrange
 
-def unique_elements_list (s: str):
-    ints = []
-    new_list = []
-    num =  len(s)
-    for x in num:
-        ints.append(int(x))
-    print(num)
-    print(ints)
-    # for i in range(num):
+def rand_list (n: int):
+    if n < 0:
+        print('Negative value is unavailable')
+        return []
 
-    #     for j in range(num):
-    #         if i != j and list
+    list1 = []
+    for i in range(n):
+        list1.append(randrange(n))
 
-str_num = '47756688399943'
-unique_el = unique_elements_list(str_num)
-print(unique_el)
+    return list1
+
+
+def unique_elements_list (s: list):
+    res_list = []
+    my_dict = {}.fromkeys(s, 0) #словарь, состоящий из ключей - ключи уникальны! При этом порядок сохранится. Значения проставляем нули
+
+    for i in s:
+        my_dict[i] += 1 # при совпадении элементов увеличиваем счётчик
+
+    for j in my_dict:
+        if my_dict[j] == 1:
+            res_list.append(j)
+
+    return res_list
+
+
+# my_list = 47756688399943
+my_list = rand_list (int(input('Input number of numbers in list: ')))
+print(my_list)
+print(unique_elements_list(my_list))
