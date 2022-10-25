@@ -24,8 +24,16 @@
 
 
 # 2. Напишите программу, которая на вход принимает 5 чисел и находит максимальное из них.
+# Простейший вариант (Мария Андреева)
 
+a = 0
+for i in range(5):
+    num = int(input())
+    if num > a:
+        a = num
+print(a)
 
+# Хороший вариант
 # list = []
 
 # #Создаем список в цикле
@@ -41,8 +49,8 @@
 
 # print(max)
 
- 
-# # #Второй вариант поиска/ В этом варианте нельзя изменять i-й элемент списка 
+
+# # #Второй вариант поиска/ В этом варианте нельзя изменять i-й элемент списка
 # for i in list:
 #     if i > max:
 #         max = i
@@ -55,11 +63,11 @@
 #     for i in range(m):
 #         a = int(input(f'Введите x{i + 1}: '))
 #         list.append(a)
-    
+
 #     return list
 
 # def max_el(array):
-    
+
 #     max = 0
 
 #     for i in range(len(array)):
@@ -79,11 +87,11 @@
 #     for i in range(m):
 #         a = int(input(f'Введите x{i + 1}: '))
 #         x.append(a)
-    
+
 #     return x
 
 # def max_el(array):
-    
+
 #     maxim = 0
 
 #     for i in range(len(array)):
@@ -98,10 +106,9 @@
 # print(f'Максимальный элемент: {maxim}')
 
 
-
 # 1. Напишите программу, которая будет на вход принимать число N и выводить числа от -N до N
 
-# a = int(input('Input number: ')) 
+# a = int(input('Input number: '))
 # print(list(range(-a, a + 1)))
 
 # def list_of_numbers(x):
@@ -117,27 +124,20 @@
 # print(x)
 
 # 2. Напишите программу, которая будет принимать на вход дробь и показывать первую цифру дробной части числа.
-    
+
 #     *Примеры:*
-    
+
 #     - 6,78 -> 7
 #     - 5 -> нет
 #     - 0,34 -> 3
 
-# num = float(input("Введите число: "))
+num = float(input("Введите число: "))
 
-# part_num = int(num *10 % 10)
+part_num = int(num*10 % 10)
 
-# if num % 1 == 0:
-#     print("Нет дробной части")
-# else:
-#     print(part_num)
+if num % 1 == 0:
+    print("Нет дробной части")
+else:
+    print(part_num)
 
 # 3. Напишите программу, которая принимает на вход число и проверяет, кратно ли оно 5 и 10 или 15, но не 30.
-
-num = int(input("Введите число: "))
-
-if (num % 5 == 0 and num % 10 == 0 or num % 15 == 0) and num % 30 != 0:
-    print("Yes")
-else:
-    print("No")
