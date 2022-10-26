@@ -28,5 +28,21 @@ for i in coefEquation.items():
         elif i[1] > 0:
             equation += ' + ' + str(abs(i[1])) + 'x^' + str(i[0])
 
-print(equation.replace('x^1', 'x').replace('x^0', '') + ' = 0')
+equation = equation.replace('x^1', 'x').replace('x^0', '').replace(' + ', ' +').replace(' - ', ' -') + ' = 0'
 
+print(equation)
+
+equation = equation.split()
+
+print(equation[:-2])
+
+equation = equation[:-2] # срез списка: убираем два последних элемента
+
+dictEquation = {}
+
+for i in range (len(equation)):
+    equation[i] = equation[i].replace('+', '').split('x^')
+    dictEquation[int(equation[i][1])] = int(equation[i][0])
+
+print(equation)
+print(dictEquation)
