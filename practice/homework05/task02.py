@@ -13,3 +13,17 @@
 
 # ДЛЯ РЕШЕНИЯ ЗАДАЧ 2 и 3 - МОЖНО ИСПОЛЬЗОВАТЬ КОНСОЛЬ 
 # или БИБЛИОТЕКУ TKINTER
+
+
+def first_move(num, max_num: int):
+    first_num = num % (max_num + 1)
+    return first_num
+
+
+max_n = 28
+n = 150
+# n = int(input('Input number of sweets: '))
+print(f'Number of sweets: {n}\nMaximum for a move: {max_n}\n')
+print(f'First participant should take {first_move(n, max_n)} sweets to win.')
+
+
